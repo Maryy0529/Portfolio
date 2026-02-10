@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ========== GLOBAL ========= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background: linear-gradient(120deg, #46255e, #b95f97, #25474f, #161528);
+    background-size: 300% 300%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
+}
+
+/* ANIMAÇÃO DO FUNDO */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ========== CABEÇALHO ========= */
+.cabecalho {
+    padding: 2.5rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.cabecalho-menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.cabecalho-menu-links {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.cabecalho-menu-links:hover {
+    color: #ffde59;
+    transform: scale(1.1);
+}
+
+/* ========== CONTEÚDO ========= */
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    margin: 2rem 10%;
+    text-align: center;
+}
+
+/* SOBRE MIM */
+.apresentacao-conteudo-titulo {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0px 0px 10px #000;
+}
+
+.apresentacao-conteudo-paragrafo {
+    font-size: 1.4rem;
+    max-width: 700px;
+    margin: auto;
+    opacity: 0.95;
+}
+
+/* ========== IMAGEM ========= */
+.imagem {
+    width: 100%;
+    max-width: 480px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.6);
+    transition: 0.4s ease;
+}
+
+.imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.imagem:hover {
+    transform: scale(1.05);
+}
+
+/* ========== BOTÕES ========= */
+.botoes {
+    display: flex;
+    flex-direction: column;   /* vertical */
+    align-items: center;      /* centraliza horizontalmente */
+    justify-content: center;  /* centraliza verticalmente se precisar */
+    gap: 1.5rem;
+    width: 100%;              /* garante que ocupe a largura total */
+    margin: 2rem 0;
+    text-align: center;       /* centraliza o texto dos links */
+}
+
+/* Estilo base dos botões */
+a[class^="botao"] {
+    display: inline-flex;      /* inline-flex para respeitar centralização */
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 60px;
+    border-radius: 50px;       /* super arredondado */
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Botão principal */
+.botao1 {
+    background: linear-gradient(135deg, #ffde59, #ffb703);
+    color: #2a003d;
+    border: none;
+    box-shadow: 0 8px 20px rgba(255, 222, 89, 0.35);
+}
+
+.botao1:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 28px rgba(255, 222, 89, 0.6);
+}
+
+/* Botões sociais */
+.botao2 { border: 2px solid #0077b5; color: #fff; }
+.botao3 { border: 2px solid #333; color: #fff; }
+.botao4 { border: 2px solid #25d366; color: #fff; }
+.botao5 { border: 2px solid #b61ca9; color: #fff; }
+
+.botao2:hover { background: #0077b5; }
+.botao3:hover { background: #333; }
+.botao4:hover { background: #25d366; }
+.botao5:hover { background: #b61ca9; }
+
+.botao2:hover,
+.botao3:hover,
+.botao4:hover,
+.botao5:hover {
+    transform: scale(1.06);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+/* Brilho suave */
+a[class^="botao"]::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.6s;
+}
+
+a[class^="botao"]:hover::before {
+    transform: translateX(100%);
+}
+
+
+
+/* ========== RODAPÉ ========= */
+.rodape {
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1rem;
+}
